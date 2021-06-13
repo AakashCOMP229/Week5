@@ -9,7 +9,7 @@ const router = express.Router();
 export default router;
 
 //create index controller
-import { DisplayAboutPage, DisplayContactPage, DisplayHomePage, DisplayProjectPage, DisplayServicePage } from "../Controllers/index";
+import { DisplayAboutPage, DisplayHomePage } from "../Controllers/index";
 
 /* GET home page. */
 router.get('/', DisplayHomePage);
@@ -21,11 +21,20 @@ router.get('/home', DisplayHomePage);
 router.get('/about', DisplayAboutPage);
 
 /* GET projects page. */
-router.get('/projects', DisplayProjectPage);
+router.get('/projects', function(req, res, next) 
+{
+  res.render('index', { title: 'Our Projects', page: 'projects'  });
+});
 
 /* GET services page. */
-router.get('/services', DisplayServicePage);
+router.get('/services', function(req, res, next) 
+{
+  res.render('index', { title: 'Our Services', page: 'services'  });
+});
 
 /* GET contact page. */
-router.get('/contact', DisplayContactPage);
+router.get('/contact', function(req, res, next) 
+{
+  res.render('index', { title: 'Contact Us', page: 'contact'  });
+});
 //module.exports = router;
