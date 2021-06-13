@@ -1,0 +1,55 @@
+body{
+    font-family: sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing:border-box;
+}
+
+.intro{
+    display: flex;
+    color:white;
+    background-size:1000vh;
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('/Assets/images/fotis-fotopoulos-6sAl6aQ4OWI-unsplash.jpg');
+    background-size:cover;
+
+}
+
+.typing{
+    position: relative;
+    margin-left: 10px;
+}
+
+.typing::after{
+    content: "";
+    position:absolute;
+
+}
+.wrapper {
+    height: 90vh;
+    /*This part is important for centering*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.typing-demo {
+    width: 35ch;
+    animation: typing 3s steps(22), blink .5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+    font-family: monospace;
+    font-size: 2em;
+}
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent
+    }
+}

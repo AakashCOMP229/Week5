@@ -1,0 +1,15 @@
+/* your custom css goes here */
+body{
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.intro{
+    display: flex;
+    color: white;
+    height: 90vh;
+    background:  linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('../Assets/images/fotis-fotopoulos-6sAl6aQ4OWI-unsplash.jpg');
+    background-size: cover;
+}

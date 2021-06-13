@@ -1,0 +1,129 @@
+body{
+    font-family: sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing:border-box;
+}
+
+.intro{
+    display: flex;
+    color:white;
+    background-size:100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('/Assets/images/fotis-fotopoulos-6sAl6aQ4OWI-unsplash.jpg');
+    background-size:cover;
+
+}
+
+.typing{
+    position: relative;
+    margin-left: 10px;
+}
+
+.typing::after{
+    content: "";
+    position:absolute;
+    width: 1px;
+    height: 100%;
+    border-right: 2px solid white;
+    right: -5px;
+
+}
+.wrapper {
+    height: 100vh;
+    /*This part is important for centering*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.typing-demo {
+    width: 35ch;
+    animation: typing 3s steps(22), blink .5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+    font-family: monospace;
+    font-size: 2em;
+}
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent
+    }
+}
+
+
+
+/* Footer Styling */
+
+.fa-stack fa-lg {
+    display: inline-block;
+}
+
+.footer-container>p {
+    color: white;
+}
+
+.content-footer {
+    background: #2b3840;
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:link {
+    color: #B69760;
+}
+
+a:hover {
+    color: #B69760;
+}
+
+a:visited {
+    color: #B69760;
+}
+
+/*Type Selectors*/
+body {
+    margin: 0;
+	font-family:  sans-serif;
+	background-color: #F8F7F7;
+}
+
+img {
+	width: 100%;	
+}
+a {
+	text-decoration: none; 
+	color: white;
+}
+ul {
+	list-style: none;	
+}
+h5 {
+	font-family: 'Vollkorn SC', serif;
+	border-bottom: dotted 2px black;
+	display: inline-block;
+	margin: 100px 0 50px;
+}
+h6 {
+	font-family: 'Euphoria Script';
+	font-size: 40px;
+}
+
+#about-me-box {
+    margin: 50px 0;
+    background-color: #fff;
+    box-shadow: 1px 2px 2px 2px rgba(0, 0, 0, 0.2);
+    display: block;
+    padding: 0 10px 0 0;
+}
+

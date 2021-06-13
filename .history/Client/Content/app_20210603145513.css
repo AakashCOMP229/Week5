@@ -1,0 +1,12 @@
+/* your custom css goes here */
+body{
+    font-family: sans-serif;
+}
+
+.intro{
+    display: flex;
+    color: white;
+    height: 100vh;
+    background: url('../Assets/images/logo.PNG');
+    background-size: cover;
+}
