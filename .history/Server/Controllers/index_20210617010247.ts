@@ -1,0 +1,70 @@
+import express, { Request, Response, NextFunction } from 'express';
+
+export function DisplayHomePage(req: Request, res: Response, next: NextFunction)
+{
+    res.render('index', { title: 'Home', page: 'home' });
+}
+
+export function DisplayAboutPage(req: Request, res: Response, next: NextFunction)
+{
+    res.render('index', { title: 'About Us', page: 'about' });
+}
+
+export function DisplayProjectPage(req: Request, res: Response, next: NextFunction)
+{
+    res.render('index', { title: 'Our Projects', page: 'projects' });
+}
+
+export function DisplayServicePage(req: Request, res: Response, next: NextFunction)
+{
+    res.render('index', { title: 'Our Services', page: 'services' });
+}
+
+export function DisplayContactPage(req: Request, res: Response, next: NextFunction)
+{
+    res.render('index', { title: 'Contact Us', page: 'contact' });
+}
+
+//Assignment 2
+
+export function DisplayLoginPage(req: Request, res: Response, next: NextFunction): void
+{
+    if(!req.user)
+    {
+        return res.render('index', { title: 'Login', page: 'login', messages: req.flash('loginMessage'), displayName: UserDisplayName(req)  });
+    }
+
+    return res.redirect('/clothing-list');
+}
+
+export function ProcessLoginPage(req: Request, res: Response, next: NextFunction): void
+{
+    passport.authenticate('local', (err, user, info) => {
+        // are there server errors?
+        if(err)
+        {
+            console.error(err);
+            return next(err);
+        }
+
+        // are there login errors?
+        if(!user)
+        {
+            req.flash('loginMessage', 'Authentication Error');
+            return res.redirect('/login');
+        }
+
+        req.login(user, (err) =>
+        // are there db errors?
+        {
+            if(err)
+            {
+                console.error(err);
+                return next(err);
+            }
+
+            return res.redirect('/clothing-list');
+
+        });
+    })(req, res, next);
+}
